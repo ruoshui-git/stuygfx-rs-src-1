@@ -1,5 +1,5 @@
 [package]
-name = "stuygfx-rust-src-1"
+name = "graphics"
 version = "0.1.0"
 authors = ["ruoshui-git <ruoshuim@gmail.com>"]
 edition = "2018"
