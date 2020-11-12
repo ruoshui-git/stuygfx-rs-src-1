@@ -39,36 +39,36 @@ pub trait Screen {
     // Default methods -----
 
     /// Draw a line from `p0 (x, y, z)` to `p1 (x, y z)`, with the given `color`
-    /// 
-    /// 
+    ///
+    ///
     /// # Examples
-    /// 
+    ///
     /// ```
     /// use graphics::prelude::*;
-    /// 
+    ///
     /// let mut img = Ppm::new();
-    /// 
+    ///
+    /// // Draw a white line from (3, 499-1, 0) to (250, 0, 0)
     /// img.draw_line((3., 499. - 1., 0.), (250., 0., 0.), Rgb::WHITE);
     /// ```
     ///
     /// # Implementation
-    /// 
-    /// This method will call [`plot`] to to draw a single point on the image.
-    /// 
-    /// `color` should be directly passed down to `plot`, so all pixels of a line have the same color. 
+    ///
+    /// This method implements a line algorithm, and calls [`plot`] to to draw a single point on the image.
+    ///
+    /// `color` should be directly passed down to `plot`, so all pixels of a line have the same color.
     /// (You can definitely change that behavior if you want to do something cool!)
-    /// 
+    ///
     /// The `z` coordinates will be used later. For now, just ignore them and use `0.` for `z` when `plot`ting.
-    /// 
+    ///
     /// The method accepts 2 tuples of length 3. If you don't know how to work with them, you can learn about them on [Rust By Example].
     /// The 2 tuples are meant to represent (x, y, z), in that order. Same goes for the tuple in [`plot`].
-    /// 
-    /// ## Implementation note (from past error):
-    /// 
-    /// Always add 2A or 2B when updating D. Half of that value will distort line.
-    /// 
+    ///
+    /// If you need a refresher on the line algorithm, check out the [Wikipedia page].
+    ///
     /// [`plot`]: #method.plot
     /// [Rust By Example]: https://doc.rust-lang.org/stable/rust-by-example/primitives/tuples.html
+    /// [Wikipedia page]: https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
     fn draw_line(&mut self, p0: (f64, f64, f64), p1: (f64, f64, f64), color: Rgb) {
         todo!("draw_line")
     }
