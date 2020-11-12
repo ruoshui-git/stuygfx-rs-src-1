@@ -2,7 +2,7 @@
 
 Congrats on your decision to use Rust for your journey in graphics class!
 
-Go ahead, clone this repo, and get a feel of Rust.
+Go ahead, clone this repo, and get a feel for Rust.
 
 # Environment
 You need to install `rustc` and `cargo`. Preferred way is through `rustup`. See [official website] for more info.
