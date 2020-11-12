@@ -28,8 +28,7 @@ Things are all hyperlinked together. You can also:
 - search for an item
 - change the theme on the top left, to the right of the Rust logo
 
-This template is heavily documented to make your life easier. It's also a LOT of work.
-
+This template is heavily documented to make your life easier.
 
 # Misc
 
