@@ -14,14 +14,20 @@ I really like using Rust (rust-analyzer) in VSCode. But there's also the [Intell
 [official website]: https://www.rust-lang.org/learn/get-started
 
 
-# Build Doc
+# Building Docs
 
-After setting up your env, in this directory, run 
+After setting up your env, in your project root directory, run 
 
 `$ cargo doc --document-private-items --open`
+or
+`$ make doc`
+to build the documentation and have `cargo` open it for you automatically in your browser.
 
-to build the documentation and have `cargo` open it for you automatically.
-To manually open the docs, inside the `target` folder in your project root, open `graphics/index.html` in your browser.
+To build the documentation only without opening, run
+`$ cargo doc --document-private-items`
+or
+`$ make build-doc`
+The docs can be opened by opening `target/graphics/index.html` in your browser.
 
 Things are all hyperlinked together. You can also:
 
