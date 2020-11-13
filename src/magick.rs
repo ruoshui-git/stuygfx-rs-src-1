@@ -13,7 +13,7 @@ use crate::ppm::Ppm;
 ///
 /// This function will be very useful later on when we deal with animations
 /// (by piping all the image data to ImageMagick and letting it make a gif out of it).
-pub fn pipe_to_magick(args: Vec<&str>) -> io::Result<Child> {
+pub fn pipe_to_magick(args: &[&str]) -> io::Result<Child> {
     Command::new(if cfg!(windows) { "magick" } else { "convert" })
         .args(args)
         .stdin(Stdio::piped())

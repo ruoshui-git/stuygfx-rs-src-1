@@ -368,7 +368,7 @@ impl Screen for Ppm {
     }
 
     fn save(&self, file_path: &str) -> io::Result<()> {
-        let mut cmd = magick::pipe_to_magick(vec!["ppm:-", file_path])?;
+        let mut cmd = magick::pipe_to_magick(&vec!["ppm:-", file_path])?;
 
         // This command should have a stdnin, so it's ok to unwrap
         let mut stdin = cmd.stdin.take().unwrap();
