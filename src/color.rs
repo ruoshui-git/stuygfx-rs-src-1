@@ -1,9 +1,9 @@
 //! Module to work with colors.
 
-/// Represent an rgb triple
+/// Represent an rgb triple.
 ///
 /// The fields are of type `u16` because the upper bound of color defined by PPM file spec is 2^16.
-/// Since we're almost definitely exclusively working with PPM files, we'll make our lives easy by using this type.
+/// Since we're exclusively working with PPM files, we'll make our lives easy by using this type.
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub struct Rgb {
     pub red: u16,
@@ -33,6 +33,7 @@ impl Rgb {
     ///
     /// ```
     /// use graphics::prelude::*;
+    /// 
     /// assert_eq!(Rgb::BLACK, Rgb::gray(0));
     /// assert_eq!(Rgb::WHITE, Rgb::gray(255));
     /// assert_eq!(Rgb {
@@ -40,6 +41,7 @@ impl Rgb {
     ///     green: 50,
     ///     blue: 50,
     /// }, Rgb::gray(50));
+    /// 
     /// ```
     ///
     /// [`Rgb`]: ./struct.Rgb.html
