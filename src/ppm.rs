@@ -267,7 +267,7 @@ impl Ppm {
         )?;
         if self.color_depth < 256 {
             for t in self.data.iter() {
-                writer.write_all(&[t.red as u8, t.green as u8, t.blue as u8])?;
+                writer.write_all(&[t.red, t.green, t.blue])?;
             }
         } else {
             for t in self.data.iter() {
