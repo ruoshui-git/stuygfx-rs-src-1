@@ -2,7 +2,7 @@
 
 use std::{
     fs::{self, File},
-    io::{self, BufWriter},
+    io,
     process::Command,
     process::{Child, Stdio},
 };
@@ -26,11 +26,7 @@ pub fn pipe_to_magick(args: &[&str]) -> io::Result<Child> {
 pub(crate) fn display_ppm(img: &Ppm) -> io::Result<()> {
     let tmpfile_name = "tmp.ppm";
 
-    let mut tmp_file = BufWriter::new(File::create(tmpfile_name)?);
-
-    img.write_binary_to_buf(&mut tmp_file)?;
-
-    drop(tmp_file);
+    img.write_binary_to_buf(&mut File::create(tmpfile_name)?)?;
 
     let mut cmd = Command::new(if cfg!(windows) {
         "imdisplay"
