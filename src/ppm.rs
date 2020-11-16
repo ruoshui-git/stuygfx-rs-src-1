@@ -252,7 +252,7 @@ impl Ppm {
         };
 
         // now we know that x and y are positive, we can cast without worry
-        Some(usize::try_from(y * self.width as i64 + x).unwrap())
+        usize::try_from(y * self.width as i64 + x).ok()
     }
 
     /// Write ppm in binary format to the given `writer` without buffering.
