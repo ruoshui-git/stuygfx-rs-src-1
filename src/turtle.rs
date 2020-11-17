@@ -13,7 +13,7 @@ use crate::{prelude::*, util::polar_to_xy};
 /// let ymax = 500.;
 ///
 /// // A turtle at the center of the screen
-/// let mut turtle = Turtle::new(Ppm::new(), xmax / 2., ymax / 2., Rgb::BLACK);
+/// let mut turtle = Turtle::new(Ppm::new(), xmax / 2., ymax / 2., Rgb::WHITE);
 ///
 /// turtle.direction = 0.;
 ///
